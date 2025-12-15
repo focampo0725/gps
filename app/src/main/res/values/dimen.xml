@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="data_size">20sp</dimen>
+
+    <!-- keyboard button size -->
+    <dimen name="keyboard_button_width">90dp</dimen>
+    <dimen name="keyboard_button_height">70dp</dimen>
+    <dimen name="keyboard_button_margin">10dp</dimen>
+
+</resources>

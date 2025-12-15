@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_primary"
+    tools:context=".ui.main.session.SessionFragment">
+    <ViewFlipper
+        android:id="@+id/vfSession"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!--        LogIn-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Categoría"
+                    android:textColor="@color/title"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvRouteName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:background="@drawable/custom_input"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_selector_right_24"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/purple_700"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:hint="Selecciona una Ruta"
+                    android:paddingStart="12dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Cod. Servicio"
+                    android:textColor="@color/title"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvServiceCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/custom_service_icon"
+                    android:drawablePadding="12dp"
+                    android:hint="Servicio "
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Cod. Conductor"
+                    android:textColor="@color/title"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvDriverCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/custom_drivercode_icon"
+                    android:drawablePadding="12dp"
+                    android:hint="Cod.Conductor"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:padding="5dp"
+                android:background="@drawable/bg_keyboard_container"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!-- FILA 1 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSeven"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_7"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEight"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_8"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnSeven"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNine"
+                        style="@style/Widget.Keyboard.Button"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:text="@string/key_9"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnEight"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <!-- FILA 2 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFour"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_4"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toBottomOf="@id/btnSeven"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFive"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_5"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toBottomOf="@id/btnEight"
+                        app:layout_constraintStart_toEndOf="@id/btnFour"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSix"
+                        style="@style/Widget.Keyboard.Button"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:text="@string/key_6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnFive"
+                        app:layout_constraintTop_toBottomOf="@id/btnNine" />
+
+
+                    <!-- FILA 3 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOne"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_1"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toBottomOf="@id/btnFour"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTwo"
+                        style="@style/Widget.Keyboard.Button"
+                        android:text="@string/key_2"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        app:layout_constraintTop_toBottomOf="@id/btnFive"
+                        app:layout_constraintStart_toEndOf="@id/btnOne"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThree"
+                        style="@style/Widget.Keyboard.Button"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:text="@string/key_3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnTwo"
+                        app:layout_constraintTop_toBottomOf="@id/btnSix" />
+
+
+                    <!-- FILA FINAL -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDelete"
+                        style="@style/Widget.Keyboard.Button.Delete"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:gravity="center"
+                        android:paddingTop="15dp"
+                        android:text=""
+                        app:icon="@drawable/ic_delete_button_64"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="32dp"
+                        app:iconTint="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btnOne" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnZero"
+                        style="@style/Widget.Keyboard.Button"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:text="@string/key_0"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnDelete"
+                        app:layout_constraintTop_toBottomOf="@id/btnTwo" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnContinue"
+                        style="@style/Widget.Keyboard.Button.Action"
+                        android:layout_width="@dimen/keyboard_button_width"
+                        android:layout_height="@dimen/keyboard_button_height"
+                        android:layout_margin="@dimen/keyboard_button_margin"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        app:icon="@drawable/ic_confirm_button_64"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:iconSize="32dp"
+                        app:iconTint="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnZero"
+                        app:layout_constraintTop_toBottomOf="@id/btnThree" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        LogOut-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvDriverCodeLogIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:drawableStart="@drawable/ic_driver_code_small"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp"
+                    android:text="Codigo : 123"
+                    android:textColor="@color/title"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPlate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    android:drawableStart="@drawable/ic_plate_small"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp"
+                    android:text="Placa : ABC-123"
+                    android:textColor="@color/title"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDriverName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="12dp"
+                    android:drawableStart="@drawable/ic_driver_small"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="12dp"
+                    android:paddingStart="12dp"
+                    android:text="Conductor : Franco O."
+                    android:textColor="@color/title"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                style="@style/Widget.Keyboard.Button"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ViewFlipper>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

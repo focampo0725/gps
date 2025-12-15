@@ -1,0 +1,2 @@
+//  ./gradlew -Dorg.gradle.java.home=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home --stacktrace :mpos:buildAndPublishApk
+// ./gradlew -Dorg.gradle.java.home=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home --stacktrace :app:assembleRelease
