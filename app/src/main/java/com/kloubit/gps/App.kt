@@ -1,10 +1,7 @@
 package com.kloubit.gps
 
 import android.app.Application
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.ServiceConnection
+import android.content.*
 import android.os.IBinder
 import android.os.RemoteException
 import android.util.Log
@@ -12,6 +9,7 @@ import android.util.Log
 import com.abx.shared.supportabx.handlers.ReceiverManager
 import com.abx.shared.supportabx.intents.SecurityIntentManager
 import com.abx.shared.supportabx.intents.restartServiceAsync
+import com.kloubit.gps.infrastructure.receivers.LocationReceiver
 import com.kloubit.gps.infrastructure.receivers.PhoneCallReceiver
 import com.kloubit.gps.infrastructure.receivers.SMSReceiver
 import com.kloubit.gps.infrastructure.utils.TTSSingleton
@@ -62,6 +60,9 @@ class App : Application() {
     @Inject
     lateinit var smsReceiver : SMSReceiver
 
+    @Inject
+    lateinit var locationReceiver: LocationReceiver
+
 
 
     override fun onCreate() {
@@ -105,6 +106,11 @@ class App : Application() {
         }
     }
 
+    fun registerlocationReceiver(){
+        locationReceiver = LocationReceiver()
+        val filter = IntentFilter("abexa.action.LOCATION_UPDATE")
+        registerReceiver(locationReceiver, filter)
+    }
     fun restartSuscriptions(){
         ReceiverManager.unregisterSupportAbxReceiver(this)
         ReceiverManager.unregisterSupportSuiteReceiver(this)

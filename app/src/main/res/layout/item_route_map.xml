@@ -3,21 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/black"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:padding="12dp"
-        android:background="@color/black">
+        android:padding="2dp"
+        android:background="@drawable/bg_border_indicator"
+       >
 
         <!-- Hora -->
         <TextView
-            android:id="@+id/tvTime"
+            android:id="@+id/tvScheduledDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="04:55:30"
+            android:layout_marginStart="5dp"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +29,7 @@
 
         <!-- Burbuja número -->
         <TextView
-            android:id="@+id/tvNumber"
+            android:id="@+id/tvArrivalDateTime"
             android:layout_width="42dp"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
@@ -37,14 +40,14 @@
             android:fontFamily="@font/inter"
             android:textSize="18sp"
             android:background="@drawable/bg_init_indicator"
-            app:layout_constraintStart_toEndOf="@id/tvTime"
+            app:layout_constraintStart_toEndOf="@id/tvScheduledDateTime"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- Nombre del paradero -->
         <TextView
-            android:id="@+id/tvStopName"
-            android:layout_width="0dp"
+            android:id="@+id/tvControlName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:text="AV HABICH"
@@ -52,8 +55,7 @@
             android:textSize="16sp"
             android:maxLines="1"
             android:ellipsize="end"
-            app:layout_constraintStart_toEndOf="@id/tvNumber"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvArrivalDateTime"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

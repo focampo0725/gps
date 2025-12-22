@@ -1,5 +1,6 @@
 package com.kloubit.gps.di.module
 
+import com.kloubit.gps.infrastructure.receivers.LocationReceiver
 import com.kloubit.gps.infrastructure.receivers.PhoneCallReceiver
 import com.kloubit.gps.infrastructure.receivers.SMSReceiver
 import dagger.Module
@@ -19,5 +20,8 @@ class BroadcastReceiverModule @Inject constructor(){
 
     @Provides
     fun provideSMSReceiver() : SMSReceiver = SMSReceiver()
+
+    @Provides
+    fun provideLocationReceiver() : LocationReceiver = LocationReceiver()
 
 }

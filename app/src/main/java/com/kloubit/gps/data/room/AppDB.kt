@@ -6,7 +6,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.kloubit.gps.data.room.dao.CompanyDao
+import com.kloubit.gps.data.room.dao.ScheduledRoadmapDao
 import com.kloubit.gps.domain.entities.Company
+import com.kloubit.gps.domain.entities.ScheduledRoadmap
 import com.kloubit.gps.infrastructure.extensions.logi
 import java.io.File
 import java.io.FileOutputStream
@@ -14,13 +16,15 @@ import java.io.FileOutputStream
 
 @Database(
     entities = [
-        Company::class
+        Company::class,
+        ScheduledRoadmap::class
     ], version = 1, exportSchema = false
 )
 abstract class AppDB : RoomDatabase(
 
 ) {
     abstract fun companyDao() : CompanyDao
+    abstract fun scheduledRoadmapDao() : ScheduledRoadmapDao
 
     companion object {
         const val DATABASE_NAME = "app.db"

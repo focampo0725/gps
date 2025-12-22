@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.kloubit.gps.data.room.AppDB
 import com.kloubit.gps.data.room.dao.CompanyDao
+import com.kloubit.gps.data.room.dao.ScheduledRoadmapDao
 import com.kloubit.gps.data.spf.ISharedPreferences
 import com.kloubit.gps.data.spf.SharedPreferencesImpl
 import dagger.Module
@@ -27,6 +28,10 @@ class DatabaseModule @Inject constructor() {
 
     @Provides @Singleton
     fun provideCompanyDao(appDB : AppDB) : CompanyDao = appDB.companyDao()
+
+    @Provides @Singleton
+    fun provideScheduledRoadmapDao(appDB : AppDB) : ScheduledRoadmapDao = appDB.scheduledRoadmapDao()
+
 
     @Provides
     @Singleton

@@ -44,6 +44,13 @@
             android:enabled="true"
             android:exported="false" />
         <service android:name="org.eclipse.paho.android.service.MqttService" />
+        <receiver
+            android:name=".infrastructure.receivers.LocationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="abexa.action.LOCATION_UPDATE" />
+            </intent-filter>
+        </receiver>
     </application>
     <uses-feature android:name="android.hardware.camera" />
 

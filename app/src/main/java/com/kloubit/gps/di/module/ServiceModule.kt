@@ -5,6 +5,7 @@ import android.content.Context
 import com.kloubit.gps.data.repository.AppRepository
 import com.kloubit.gps.infrastructure.clients.ClientMQTT
 import com.kloubit.gps.infrastructure.clients.ClientObserver
+import com.kloubit.gps.infrastructure.clients.ClientThread
 import com.kloubit.gps.infrastructure.stateful.AppState
 import dagger.Module
 import dagger.Provides
@@ -28,6 +29,10 @@ class ServiceModule @Inject constructor(){
     ) : ClientObserver =
         ClientObserver(context,appState,appRepository)
 
+    @Provides
+    fun providesClientThread(
+        @ApplicationContext context: Context, appRepository: AppRepository,  appState: AppState
+    ) : ClientThread = ClientThread(context, appRepository, appState)
 
 
 

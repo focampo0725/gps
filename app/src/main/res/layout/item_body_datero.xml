@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="2dp"
+        android:background="@drawable/bg_border_indicator"
+        >
+
+    <!-- Hora -->
+        <TextView
+            android:id="@+id/tvScheduledDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04:55:30"
+            android:layout_marginHorizontal="2dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvArrivalDateTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Burbuja número -->
+        <TextView
+            android:id="@+id/tvArrivalDateTime"
+            android:layout_width="42dp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_init_indicator"
+            android:fontFamily="@font/inter"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/tvScheduledDateTime"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
