@@ -1,76 +1,94 @@
-//package com.kloubit.gps.ui.adapter
-//
-//import android.content.Context
-//import android.view.LayoutInflater
-//import android.view.ViewGroup
-//import androidx.recyclerview.widget.RecyclerView
-//import com.kloubit.gps.domain.dto.TimekeepingDTO
-//
-//class DateroAdapter(private val context: Context) :
-//    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-//
-//    private var linearDateroAbovelList: List<TimekeepingDTO> = emptyList()
-//    private var textSize: Float = 16f
-//
-//    companion object {
-//        private const val TYPE_DATERO = 0
-//        private const val TYPE_ANOTHER = 1
-//    }
-//
-//    fun updateAboveListData(linearDateroAboveList: List<TimekeepingDTO>, textSize: Float) {
-//        this.linearDateroAbovelList = linearDateroAboveList
-//        this.textSize = textSize
-//        notifyDataSetChanged()
-//    }
-//
-//    // Definir el tipo de item según una propiedad del DTO
-//    override fun getItemViewType(position: Int): Int {
-//        val item = linearDateroAbovelList[position]
-//        return if (item.isItem) TYPE_DATERO else TYPE_ANOTHER
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-//        val inflater = LayoutInflater.from(context)
-//        return when (viewType) {
-//            TYPE_DATERO -> {
-//                val binding = ItemDateroBinding.inflate(inflater, parent, false)
-//                DateroViewHolder(binding)
-//            }
-//            TYPE_ANOTHER -> {
-//                val binding = ItemAnotherBinding.inflate(inflater, parent, false)
-//                AnotherViewHolder(binding)
-//            }
-//            else -> throw IllegalArgumentException("Tipo desconocido")
-//        }
-//    }
-//
-//    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-//        val item = linearDateroAbovelList[position]
-//
-//        when (holder) {
-//            is DateroViewHolder -> holder.bind(item, textSize)
-//            is AnotherViewHolder -> holder.bind(item)
-//        }
-//    }
-//
-//    override fun getItemCount(): Int = linearDateroAbovelList.size
-//
-//    // ViewHolder para ItemDatero
-//    inner class DateroViewHolder(private val binding: ItemDateroBinding) :
-//        RecyclerView.ViewHolder(binding.root) {
-//
-//        fun bind(item: TimekeepingDTO, textSize: Float) {
-//            binding.textView.text = item.text
-//            binding.textView.textSize = textSize
-//        }
-//    }
-//
-//    // ViewHolder para otro layout
-//    inner class AnotherViewHolder(private val binding: ItemAnotherBinding) :
-//        RecyclerView.ViewHolder(binding.root) {
-//
-//        fun bind(item: TimekeepingDTO) {
-//            binding.textView.text = item.text
-//        }
-//    }
-//}
+package com.kloubit.gps.ui.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.abx.shared.supportabx.extensions.logi
+import com.kloubit.gps.R
+import com.kloubit.gps.databinding.ItemBodyDateroBinding
+import com.kloubit.gps.databinding.ItemHeaderDateroBinding
+import com.kloubit.gps.databinding.ItemRouteMapBinding
+import com.kloubit.gps.domain.dto.ListItem
+import com.kloubit.gps.domain.dto.LocatorControlDTO
+import com.kloubit.gps.domain.dto.TimekeepingDTO
+
+class DateroAdapter(private val context: Context) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var items: List<ListItem> = emptyList()
+    companion object {
+        private const val TYPE_HEADER = 0
+        private const val TYPE_INFO = 1
+    }
+
+    fun setLinearDatero(linearDatero: List<ListItem>) {
+        this.items = linearDatero
+        notifyDataSetChanged()
+    }
+
+    // Decide el tipo de ítem según la posición
+    override fun getItemViewType(position: Int): Int {
+        return when (items[position]) {
+            is ListItem.TimekeepingHeaderDTO -> TYPE_HEADER
+            is ListItem.TimekeepingBodyDTO -> TYPE_INFO
+        }
+    }
+
+    // Crear ViewHolder según el tipo
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            TYPE_HEADER -> {
+                val binding = ItemHeaderDateroBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                HeaderViewHolder(binding)
+            }
+            TYPE_INFO -> {
+                val binding = ItemBodyDateroBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                InfoViewHolder(binding)
+            }
+            else -> throw IllegalArgumentException("Tipo de vista desconocido")
+        }
+    }
+
+
+    // Vincular datos con cada ViewHolder
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (val item = items[position]) {
+            is ListItem.TimekeepingHeaderDTO -> (holder as HeaderViewHolder).bind(item)
+            is ListItem.TimekeepingBodyDTO -> (holder as InfoViewHolder).bind(item)
+        }
+    }
+
+    override fun getItemCount() = items.size
+
+    // -------------------
+    // ViewHolders
+    // -------------------
+
+    class HeaderViewHolder(private val binding: ItemHeaderDateroBinding) :
+        RecyclerView.ViewHolder(binding.root) {  // <-- aquí usamos binding.root
+
+        fun bind(item: ListItem.TimekeepingHeaderDTO) {
+            binding.tvHeader.text = item.titulo
+        }
+    }
+
+    class InfoViewHolder(private val binding: ItemBodyDateroBinding) :
+        RecyclerView.ViewHolder(binding.root) {  // <-- binding.root
+
+        fun bind(item: ListItem.TimekeepingBodyDTO) {
+            binding.tvScheduledDateTime.text = item.scheduledDateTime
+            binding.tvArrivalDateTime.text = item.arrivalDiferenceTime
+        }
+    }
+}
+
