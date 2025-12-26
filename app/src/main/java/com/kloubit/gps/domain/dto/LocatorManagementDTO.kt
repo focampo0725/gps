@@ -27,4 +27,6 @@ sealed class ListItem {
     ) : ListItem()
 }
 
+data class CountControlWithoutArriveAndArrive(val arrivedMarkedCount : Int, val withouArrivedMarkedCount : Int)
+
 
