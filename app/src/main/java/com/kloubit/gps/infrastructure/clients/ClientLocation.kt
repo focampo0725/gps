@@ -31,6 +31,7 @@ class ClientLocation(
         latitude: Double,
         longitude: Double
     ) {
+
         if (!isActive) return
 
         val now = System.currentTimeMillis()
@@ -53,10 +54,10 @@ class ClientLocation(
         }
     }
 
+
     /**
      * Procesamiento central de ubicación
      */
-    @UIThread
     private fun setOnLocation(location: Location, isFakeTrack: Boolean = false) {
         appState.location = location
 //        appState.foundLocationLastDate = Date()

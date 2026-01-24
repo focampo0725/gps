@@ -1,33 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.Keyboard.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:backgroundTint">#3F3F41</item>
-        <item name="rippleColor">@color/gray_50</item>
-        <item name="strokeColor">@color/white_500</item>
-        <item name="strokeWidth">1.5dp</item>
-        <item name="cornerRadius">10dp</item>
-        <item name="android:textColor">@android:color/white</item>
+
+
+    <style name="Widget.Keyboard.Button"
+        parent="Widget.MaterialComponents.Button">
+
+        <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">35sp</item>
-        <item name="android:fontFamily">@font/segoeuil</item>
+        <item name="android:textColor">@android:color/white</item>
+
+        <item name="backgroundTint">@color/keyboard_button_bg</item>
+        <item name="cornerRadius">14dp</item>
+
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+
+        <item name="android:elevation">2dp</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="strokeColor">@color/white_500</item>
+
+        <item name="rippleColor">@color/keyboard_ripple</item>
     </style>
 
 
-    <style name="Widget.Keyboard.Button.Delete" parent="Widget.Keyboard.Button">
-        <item name="android:backgroundTint">#862D2D</item>
-        <item name="strokeColor">#CC5C5C</item>
-        <item name="rippleColor">#40CC5C5C</item>
-        <item name="android:textColor">@android:color/white</item>
+
+    <!-- BOTÓN SOLO ICONO (DELETE) -->
+    <style name="Widget.Keyboard.Button.Delete"
+        parent="Widget.Keyboard.Button">
+
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:gravity">center</item>
+
+        <item name="backgroundTint">@color/keyboard_button_bg</item>
     </style>
 
-    <style name="Widget.Keyboard.Button.Action" parent="Widget.Keyboard.Button">
-        <item name="android:backgroundTint">#2979FF</item>
-        <item name="strokeColor">#2979FF</item>
-        <item name="rippleColor">#402979FF</item>
-        <item name="android:textColor">@android:color/white</item>
+    <!-- BOTÓN ACCIÓN (GO / CONFIRMAR) -->
+    <style name="Widget.Keyboard.Button.Action"
+        parent="Widget.Keyboard.Button">
+
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:gravity">center</item>
+
+        <item name="backgroundTint">@color/keyboard_action_bg</item>
+        <item name="android:elevation">4dp</item>
     </style>
+
+    <!-- ================= TEXT APPEARANCE ================= -->
+
+    <style name="TextAppearance.App.Title"
+        parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textSize">42sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.App.Subtitle"
+        parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.App.Footer"
+        parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.App.Token"
+        parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Widget.Token.Box"  parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_token_box</item>
+    </style>
+
+
+
+
+<!--    <style name="Widget.Keyboard.Button" parent="Widget.MaterialComponents.Button">-->
+<!--        <item name="android:backgroundTint">#3F3F41</item>-->
+<!--        <item name="rippleColor">@color/gray_50</item>-->
+<!--        <item name="strokeColor">@color/white_500</item>-->
+<!--        <item name="strokeWidth">1.5dp</item>-->
+<!--        <item name="cornerRadius">10dp</item>-->
+<!--        <item name="android:textColor">@android:color/white</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:textSize">35sp</item>-->
+<!--        <item name="android:fontFamily">@font/segoeuil</item>-->
+<!--        <item name="android:insetTop">0dp</item>-->
+<!--        <item name="android:insetBottom">0dp</item>-->
+<!--    </style>-->
+
+
+<!--    <style name="Widget.Keyboard.Button.Delete" parent="Widget.Keyboard.Button">-->
+<!--        <item name="android:backgroundTint">#862D2D</item>-->
+<!--        <item name="strokeColor">#CC5C5C</item>-->
+<!--        <item name="rippleColor">#40CC5C5C</item>-->
+<!--        <item name="android:textColor">@android:color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="Widget.Keyboard.Button.Action" parent="Widget.Keyboard.Button">-->
+<!--        <item name="android:backgroundTint">#2979FF</item>-->
+<!--        <item name="strokeColor">#2979FF</item>-->
+<!--        <item name="rippleColor">#402979FF</item>-->
+<!--        <item name="android:textColor">@android:color/white</item>-->
+<!--    </style>-->
 
     <style name="DialogLight" parent="android:Theme.Dialog">
         <item name="android:windowBackground">@null</item>

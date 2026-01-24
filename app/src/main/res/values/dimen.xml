@@ -7,4 +7,8 @@
     <dimen name="keyboard_button_height">70dp</dimen>
     <dimen name="keyboard_button_margin">10dp</dimen>
 
+<!--    <dimen name="keyboard_button_width">72dp</dimen>-->
+<!--    <dimen name="keyboard_button_height">64dp</dimen>-->
+<!--    <dimen name="keyboard_button_margin">6dp</dimen>-->
+
 </resources>

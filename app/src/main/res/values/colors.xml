@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="keyboard_button_bg">#1F2933</color> <!-- gris oscuro -->
+    <color name="keyboard_action_bg">#2D7DFF</color> <!-- azul confirmar -->
+    <color name="keyboard_ripple">#33FFFFFF</color>
+
+    <color name="primary">#2979FF</color>
+    <color name="text_secondary">#8A9BB0</color>
 
     <color name="Ivory">#FFFFF0</color>
     <color name="LightYellow">#FFFFE0</color>

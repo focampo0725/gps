@@ -19,8 +19,7 @@ class TrackProcessorImpl(
     private val appRepository: AppRepository,
     private val appState: AppState,
     private val context: Context
-) :
-    ITrackProcessor {
+) : ITrackProcessor {
 
     var locallyTrackCounter = 0 // 2, 4, 6 8 | 2, ...., 1800
     var locallyStoppedVehicleCounter = 0 // 2, 4, 6 8 | 2, ...., 1800
